@@ -1,0 +1,85 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    background-color: black;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    align-items: center;
+}
+
+.search {
+    height: 2em;
+}
+
+.search:focus {
+    outline-color: black;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: 1fr;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 1em;
+    width: 100%;
+    justify-items: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.nav {
+    list-style: none;
+    margin: 0;
+    padding: 1em 0;
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+}
+
+.nav li {
+    display: inline-block;
+}
+
+.active {
+    background-color: red;
+}
+
+button {
+    display: inline-block;
+    border: none;
+    border-radius: .5em;
+    padding: .5rem 1rem;
+    margin: 0;
+    text-decoration: none;
+    background: white;
+    color: black;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+    background-color: red;
+    outline-color: black;
+}
+
+.movie-image {
+    width: 100%;
+}
