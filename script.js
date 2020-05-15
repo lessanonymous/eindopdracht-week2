@@ -1,7 +1,10 @@
+// import movie data
 import { movies } from './db.js';
+// get HTML elements
 const mainElement = document.querySelector('main');
 const filterMoviesButtons = document.querySelectorAll('.filter-movies-button');
 const searchField = document.querySelector('.search');
+// helper functions
 const createMovieElement = movieData => {
     const aElement = document.createElement('a');
     const imgElement = document.createElement('img');
@@ -29,6 +32,7 @@ const removeAllMovieElementsFromDOM = () => {
     const movieElements = document.querySelectorAll('.movie');
     movieElements.forEach(element => mainElement.removeChild(element));
 };
+// eventhandlers
 const handleMoviesEvent = e => {
     removeAllMovieElementsFromDOM();
     let filter;
@@ -44,6 +48,8 @@ const handleMoviesButtonClickEvent = e => {
 const handleKeyUpEvent = e => {
     if (e.key === 'Enter' && searchField.value) handleMoviesEvent(e);
 };
+// add eventlisteners
 filterMoviesButtons.forEach(button => button.addEventListener('click', handleMoviesButtonClickEvent));
 document.addEventListener('keyup', handleKeyUpEvent);
+// add movie elements on page load
 addMovieElementsToDOM(movies);
