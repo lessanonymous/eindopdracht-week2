@@ -20,7 +20,7 @@ const filterMovies = (movies, filter) => {
     if (filter === 'New') {
         return movies.filter(movie => {
             let year;
-            movie.Year.includes('-') ? year = movie.Year.split('-')[1] : year = movie.Year;
+            movie.Year.includes('-') ? year = movie.Year.split('-')[0] : year = movie.Year;
             return Number(year) >= 2014;
         });
     } else {
@@ -44,7 +44,7 @@ const handleMoviesEvent = e => {
 };
 const handleMoviesButtonClickEvent = e => {
     if (!e.target.classList.contains('active')) handleMoviesEvent(e);
-}
+};
 const handleKeyUpEvent = e => {
     if (e.key === 'Enter' && searchField.value) handleMoviesEvent(e);
 };
